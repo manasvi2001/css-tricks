@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;1,300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+}
+
+:root {
+  --clr: #161853;
+}
+
+body {
+  background-color: var(--clr);
+}
+
+.navigation {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.navigation ul {
+  background-color: #faedf0;
+  display: flex;
+  height: 70px;
+  width: 90%;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  transform: translateY(85vh);
+}
+
+.navigation ul li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.navigation ul li .link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #292c6d;
+}
+
+.navigation ul li .link .icon {
+  font-size: 25px;
+  transform: translateY(30%);
+  /* opacity: 0; */
+  transition: all 0.5s;
+}
+
+.navigation ul li.active .link .icon {
+  transform: translateY(-150%);
+}
+
+.navigation ul li .link .text {
+  font-size: 15px;
+  transform: translateY(25px);
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.navigation ul li.active .link .text {
+  transform: translateY(-40%);
+  opacity: 1;
+}
+
+.indicator {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 10%;
+  transform: translateX(-50%) translateY(-70%);
+  border-radius: 50%;
+  z-index: -1;
+  background-color: #ec255a;
+  border: 8px solid var(--clr);
+  transition: 0.5s;
+}
+
+.indicator::before {
+  content: '';
+  position: absolute;
+  background-color: #faedf0;
+  width: 15px;
+  height: 15px;
+  bottom: -2px;
+  left: -14px;
+  border-top-right-radius: 100%;
+  box-shadow: 1px -10px 0 0 var(--clr);
+}
+
+.indicator::after {
+  content: '';
+  position: absolute;
+  background-color: #faedf0;
+  width: 15px;
+  height: 15px;
+  bottom: -2px;
+  right: -14px;
+  border-top-left-radius: 100%;
+  box-shadow: -1px -10px 0 0 var(--clr);
+}
+
+.navigation ul li:nth-child(1).active ~ .indicator {
+  left: 10%;
+}
+
+.navigation ul li:nth-child(2).active ~ .indicator {
+  left: 30%;
+}
+
+.navigation ul li:nth-child(3).active ~ .indicator {
+  left: 50%;
+}
+
+.navigation ul li:nth-child(4).active ~ .indicator {
+  left: 70%;
+}
+
+.navigation ul li:nth-child(5).active ~ .indicator {
+  left: 90%;
+}
