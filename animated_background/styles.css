@@ -9,4 +9,27 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background: linear-gradient(#000, #000040) no-repeat;
+}
+
+#stars {
+  position: absolute;
+  background: url('assets/img/stars.png') no-repeat;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  z-index: 10;
+}
+
+#moon {
+  position: absolute;
+  background-image: url('./assets/img/moon.png');
+  top: 0;
+  left: 0;
+  background-size: cover;
+}
+
+#text {
+  color: #fff;
+  font-size: xx-large;
 }
